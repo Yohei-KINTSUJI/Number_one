@@ -19,9 +19,9 @@
 
 目標：良いコミュニケーションをとる．
 
-[Smart Alarm](SmartAlarm_2.md)
-
 # 第 2 回　 6/19
+
+[Smart Alarm](SmartAlarm_2.md)
 
 目的
 
