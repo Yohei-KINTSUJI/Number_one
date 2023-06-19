@@ -18,4 +18,4 @@
 
 目標：良いコミュニケーションをとる．
 
-[SE_Beginner_2](SE_Beginner_2.md)
+[Smart Alarm](SmartAlarm_2.md)
