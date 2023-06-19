@@ -19,8 +19,8 @@
 
 目標：良いコミュニケーションをとる．
 
-[SE_Beginner_2](SE_Beginner_2.md)
-=======
+[Smart Alarm](SmartAlarm_2.md)
+
 # 第 2 回　 6/19
 
 目的
