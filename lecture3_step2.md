@@ -36,4 +36,4 @@
 
 ### 画面
 
-![画面の説明代替テキスト]((pics/use_case2.jpg)
+![画面の説明代替テキスト](pics/use_case2.jpg)
