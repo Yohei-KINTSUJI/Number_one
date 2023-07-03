@@ -51,3 +51,9 @@
 [編集データ](https://online.visual-paradigm.com/share.jsp?id=323637313930352d31)
 
 ![ロバストネス図のスクリーンショット](pics/robustness_diagrams/usecase6_robustness.jpg)
+
+# シーケンス図
+
+[編集データ](https://online.visual-paradigm.com/share.jsp?id=323637313930352d32)
+
+![シーケンス図のスクリーンショット](pics/sequence_diagrams/usecase6_sequence.png)
