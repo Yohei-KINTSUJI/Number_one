@@ -55,3 +55,14 @@
 
 ![測定画面トップ](pics/use_case4.jpg)
 
+# ロバストネス図
+
+[編集データ](https://online.visual-paradigm.com/share.jsp?id=323637313839362d33)
+
+![ロバストネス図のスクリーンショット](pics/robustness_diagrams/usecase4_robustness.png)
+
+# シーケンス図
+
+[編集データ](hhttps://online.visual-paradigm.com/share.jsp?id=323637313839362d34)
+
+![シーケンス図のスクリーンショット](pics\sequence_diagrams\usecase4_sequence.png)
