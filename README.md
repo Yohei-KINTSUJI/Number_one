@@ -135,4 +135,10 @@ SmartAlarmのユースケースモデリングを行う
 6. [目的地までの道順を確認する](lecture3_step6.md)
 
 
+# 第4回
 
+ - [ドメインモデル図 - URL](https://online.visual-paradigm.com/share.jsp?id=323637313839362d31)
+
+
+- キーワード
+-- ユーザ　カレンダー　アラーム　アイコン　時間　道順　予定　登録　事前通知
