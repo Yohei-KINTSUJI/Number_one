@@ -40,3 +40,6 @@
 ## 予定登録画面
 
 ![予定登録画面](pics/use_case3.jpg)
+
+## シーケンス図
+![画面の説明代替テキスト](pics/sequence_diagrams/usecase3_sequence.png)
