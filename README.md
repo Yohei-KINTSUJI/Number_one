@@ -113,4 +113,7 @@ WONT（やらない）:
 
 07/03
 
+ - [ドメインモデル図 - URL](https://online.visual-paradigm.com/share.jsp?id=323637313839362d31)
+
 ユーザ　カレンダー　アラーム　アイコン　時間　道順　予定　登録　事前通知
+
