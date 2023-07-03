@@ -37,7 +37,7 @@
 
 ![画面の説明代替テキスト](pics/use_case1.jpg)
 
-## ロバストネス・ダイアグラム
+## ロバストネス図
 ![画面の説明代替テキスト](pics/robustness_diagrams/usecase1_robustness.drawio.png)
 
 ## シーケンス図

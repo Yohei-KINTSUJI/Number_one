@@ -37,3 +37,6 @@
 ### カレンダー表示
 
 ![カレンダー表示画面](pics/use_case2.jpg)
+
+## シーケンス図
+![画面の説明代替テキスト](pics/sequence_diagrams/usecase2_sequence.png)
