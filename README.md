@@ -161,35 +161,35 @@ SmartAlarmのユースケースモデリングを行う
 ## システムアーキテクチャを作成
 ### ユーザインターフェース層
 - ログイン画面
-  - userId
-  - password
+  - String userId
+  - String password
   - login(userId, password)
 - カレンダー画面（予定確認）
-  - userId
-  - calendarId
-  - calendarInformation
-  - dateInformation
-  - selectDate(date)
+  - String userId
+  - String calendarId
+  - Event[] events
+  - Date dateInformation
+  - selectDate(Date date)
   - addNewCalendar()
-  - getCalendar(userId, calendarId)
+  - Event[] getCalendar(userId, calendarId)
 - alarm 予定登録画面
-  - alarmTime
-  - eventTime
-  - location
-  - transportType
-  - saveEvent(eventTime, location, transportType)
+  - Date alarmTime
+  - Date eventTime
+  - Location location
+  - Transport transportType
+  - saveEvent(Date eventTime, Location location, Transport transportType)
 - alarm 予定通知画面
-  - alarmTime
+  - Date alarmTime
   - Event[] events
   - getDirections()
 - alarm 予定確認画面（道順確認）
-  - datetime
-  - location
-  - wakeUpTime
-  - addCalendarEvent(datetime, location)
-  - selectDate(date)
-  - getDirections(datetime, location)
-  - calculateWakeUpTime(event)
+  - Date time
+  - Location location
+  - Date wakeUpTime
+  - addCalendarEvent(Date time, Location location)
+  - selectDate(Date date)
+  - getDirections(Date datetime, Location location)
+  - calculateWakeUpTime(Event event)
 
 ### アプリケーション層
 
