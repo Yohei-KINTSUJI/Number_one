@@ -202,8 +202,15 @@ SmartAlarmのユースケースモデリングを行う
 
 ### アプリケーション層
 
+- ログインコントローラ
+ - Boolean showLoginForm(void)
+ - Boolean login(String uid, String pass)
+ - Boolean logout(void)
+
 - ユーザコントローラ
   - 登録画面表示
+  - Boolean showPlan(Date date)
+  - Boolean showReservationForm(Date date)
   - 登録
   - 削除画面表示
   - 削除  
