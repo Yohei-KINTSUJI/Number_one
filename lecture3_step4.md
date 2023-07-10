@@ -65,4 +65,4 @@
 
 [編集データ](hhttps://online.visual-paradigm.com/share.jsp?id=323637313839362d34)
 
-![シーケンス図のスクリーンショット](pics\sequence_diagrams\usecase4_sequence.png)
+![シーケンス図のスクリーンショット](pics/sequence_diagrams/usecase4_sequence.png)

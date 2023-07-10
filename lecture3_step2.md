@@ -45,10 +45,10 @@
 
 ![カレンダー表示画面](pics/use_case2.jpg)
 
-## ロバストネス図
+# ロバストネス図
 
-![画面の説明代替テキスト](pics/robustness_diagrams/usecase2_robustness.png)
+![ロバストネス図のスクリーンショット](pics/robustness_diagrams/usecase2_robustness.png)
 
-## シーケンス図
+# シーケンス図
 
-![画面の説明代替テキスト](pics/sequence_diagrams/usecase2_sequence.png)
+![シーケンス図のスクリーンショット](pics/sequence_diagrams/usecase2_sequence.png)
