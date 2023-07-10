@@ -163,33 +163,33 @@ SmartAlarmのユースケースモデリングを行う
 - ログイン画面
   - String userId
   - String password
-  - login(userId, password)
+  - Boolean login(userId, password)
 - カレンダー画面（予定確認）
   - String userId
   - String calendarId
   - Event[] events
   - Date dateInformation
-  - selectDate(Date date)
-  - addNewCalendar()
+  - void selectDate(Date date)
+  - void addNewCalendar()
   - Event[] getCalendar(userId, calendarId)
 - alarm 予定登録画面
   - Date alarmTime
   - Date eventTime
   - Location location
   - Transport transportType
-  - saveEvent(Date eventTime, Location location, Transport transportType)
+  - Boolean saveEvent(Date eventTime, Location location, Transport transportType)
 - alarm 予定通知画面
   - Date alarmTime
   - Event[] events
-  - getDirections()
+  - void getDirections()
 - alarm 予定確認画面（道順確認）
   - Date time
   - Location location
   - Date wakeUpTime
-  - addCalendarEvent(Date time, Location location)
-  - selectDate(Date date)
-  - getDirections(Date datetime, Location location)
-  - calculateWakeUpTime(Event event)
+  - Boolean addCalendarEvent(Date time, Location location)
+  - void selectDate(Date date)
+  - void getDirections(Date datetime, Location location)
+  - Date calculateWakeUpTime(Event event)
 
 ### アプリケーション層
 
