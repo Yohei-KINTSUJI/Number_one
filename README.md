@@ -258,7 +258,7 @@ SmartAlarmのユースケースモデリングを行う
       + Boolean chkPwd(String pass)
   - ユーザセッション
     - User user
-     + Boolean invalidate()
+     + Boolean invalidate(void)
   -  予定
     - Long rid
     - String uid
