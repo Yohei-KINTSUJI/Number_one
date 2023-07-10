@@ -152,6 +152,8 @@ SmartAlarmのユースケースモデリングを行う
 - アーキテクチャ図
 - ![アーキテクチャ図](pics/Architecture_Diagram.jpg)
 
+- [クラス図](https://onedrive.live.com/edit.aspx?resid=C791F496AC885022!2915&ithint=file%2cpptx&authkey=!APCOYBchu4LWp_E)
+
 ## グループワーク やること
   - スマートアラームのシステムアーキテクチャを洗練させる
    - ブロック図を作成
