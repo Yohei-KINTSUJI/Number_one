@@ -154,6 +154,15 @@ SmartAlarmのユースケースモデリングを行う
 
 - [クラス図](https://onedrive.live.com/edit.aspx?resid=C791F496AC885022!2915&ithint=file%2cpptx&authkey=!APCOYBchu4LWp_E)
 
+UI層のクラス図
+![UI層のクラス図](pics/class_UI.jpg)
+
+アプリケーション層のクラス図
+![アプリケーション層のクラス図](pics/class_app.jpg)
+
+ドメイン層のクラス図
+![ドメイン層のクラス図](pics/class_domain.jpg)
+
 ## グループワーク やること
   - スマートアラームのシステムアーキテクチャを洗練させる
    - ブロック図を作成
