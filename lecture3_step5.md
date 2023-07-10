@@ -37,3 +37,11 @@
 ## アラーム設定時刻通知画面
 
 ![アラーム設定時刻通知画面](pics/use_case5.jpg)
+
+# ロバストネス図
+
+![ロバストネス図のスクリーンショット](pics/robustness_diagrams/usecase5_robustness.png)
+
+# シーケンス図
+
+![シーケンス図のスクリーンショット](pics/sequence_diagrams/usecase5_sequence.png)
