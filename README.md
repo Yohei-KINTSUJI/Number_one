@@ -149,7 +149,10 @@ SmartAlarmのユースケースモデリングを行う
 
 - [ドメインモデル図 - URL](https://online.visual-paradigm.com/share.jsp?id=323637313839362d31)
 
-- グループワーク やること
+- アーキテクチャ図
+- ![アーキテクチャ図](pics/Architecture_Diagram.jpg)
+
+## グループワーク やること
   - スマートアラームのシステムアーキテクチャを洗練させる
    - ブロック図を作成
   - ソフトウェアアーキテクチャを考える
@@ -213,11 +216,54 @@ SmartAlarmのユースケースモデリングを行う
 ### ドメイン層
 - サービス
   - ユーザサービス
+    - UserRepository users
+      + User createUser(User user)
+      + List<User> getAllUsers(void)
+      + User getUser(String uid)
+      + User deleteUser(String uid)
+
   - 予定管理サービス
+    - ReservationRepository reservations
+    - UserRepository users
+      + List<Reservation> getMyCalendar(String uid, Date month)
+      + List<Resevation> getReservationByDate(String uid, Date date)
+      + Reservation getResevationByNumber(Long rid)
+      + boolean isVacant(String uid, Date date, Date startTime, Date endTime)
+      + Reservation add(Reservation reservation)
+      + Reservation change(String uid, Long rid, Date date, Date startTime, Date endTime)
+      + boolean cancel(String uid, Long rid)
+
   - 予定通知サービス
+    - UserRepository users
+      + Date pushAlarmTime(String uid, Date date)
+
 - エンティティ
   -  ユーザ
+    - String uid
+    - String password
+    - String name
+      + boolean chkPwd(String pass)
+  - ユーザセッション
+    - User user
+     + boolean invalidate()
   -  予定
+    - Long rid
+    - String uid
+    - Date date
+    - Date startTime
+    - Date endTime
+    - String purpose
+
 - レポジトリ
   - ユーザ台帳
+    - User findById(String uid)
+    - List<User> findAllUser(void)
+    - User save(User user)
+    - boolean deleteById(String uid)
+
   - 予定台帳
+    - Reservation findById(Long rid)
+    - List<Reservation> findByMonthAndUid(Date month, String uid)
+    - List<Reservation> findByDate(Date date, String uid)
+    - Reservation save(Reservation reservation)
+    - boolean deleteById(Long rid)
