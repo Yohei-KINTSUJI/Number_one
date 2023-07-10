@@ -167,31 +167,35 @@ SmartAlarmのユースケースモデリングを行う
   - String userId
   - String password
   - Boolean login(userId, password)
+
 - カレンダー画面（予定確認）
   - String userId
   - String calendarId
-  - Event[] events
+  - List<Event> events
   - Date dateInformation
-  - void selectDate(Date date)
-  - void addNewCalendar()
-  - Event[] getCalendar(userId, calendarId)
+  - boolean selectDate(Date date)
+  - boolean addNewCalendar(void)
+  - List<Event> getCalendar(userId, calendarId)
+
 - alarm 予定登録画面
   - Date alarmTime
   - Date eventTime
   - Location location
-  - Transport transportType
-  - Boolean saveEvent(Date eventTime, Location location, Transport transportType)
+  - TransportType t_type
+  - Boolean saveEvent(Date eventTime, Location location, TransportType t_type)
+
 - alarm 予定通知画面
   - Date alarmTime
-  - Event[] events
-  - void getDirections()
+  - List<Event> events
+  - Reservation getPlan(Date date)
+
 - alarm 予定確認画面（道順確認）
   - Date time
   - Location location
   - Date wakeUpTime
   - Boolean addCalendarEvent(Date time, Location location)
-  - void selectDate(Date date)
-  - void getDirections(Date datetime, Location location)
+  - Boolean selectDate(Date date)
+  -  getDirections(Date datetime, Location location)
   - Date calculateWakeUpTime(Event event)
 
 ### アプリケーション層
@@ -228,10 +232,10 @@ SmartAlarmのユースケースモデリングを行う
       + List<Reservation> getMyCalendar(String uid, Date month)
       + List<Resevation> getReservationByDate(String uid, Date date)
       + Reservation getResevationByNumber(Long rid)
-      + boolean isVacant(String uid, Date date, Date startTime, Date endTime)
+      + Boolean isVacant(String uid, Date date, Date startTime, Date endTime)
       + Reservation add(Reservation reservation)
       + Reservation change(String uid, Long rid, Date date, Date startTime, Date endTime)
-      + boolean cancel(String uid, Long rid)
+      + Boolean cancel(String uid, Long rid)
 
   - 予定通知サービス
     - UserRepository users
@@ -242,10 +246,10 @@ SmartAlarmのユースケースモデリングを行う
     - String uid
     - String password
     - String name
-      + boolean chkPwd(String pass)
+      + Boolean chkPwd(String pass)
   - ユーザセッション
     - User user
-     + boolean invalidate()
+     + Boolean invalidate()
   -  予定
     - Long rid
     - String uid
@@ -259,11 +263,11 @@ SmartAlarmのユースケースモデリングを行う
     - User findById(String uid)
     - List<User> findAllUser(void)
     - User save(User user)
-    - boolean deleteById(String uid)
+    - Boolean deleteById(String uid)
 
   - 予定台帳
     - Reservation findById(Long rid)
     - List<Reservation> findByMonthAndUid(Date month, String uid)
     - List<Reservation> findByDate(Date date, String uid)
     - Reservation save(Reservation reservation)
-    - boolean deleteById(Long rid)
+    - Boolean deleteById(Long rid)
