@@ -163,7 +163,7 @@ SmartAlarmのユースケースモデリングを行う
 - ログイン画面
   - userId
   - password
-  - login()
+  - login(userId, password)
 - カレンダー画面（予定確認）
   - userId
   - calendarId
@@ -174,13 +174,13 @@ SmartAlarmのユースケースモデリングを行う
   - getCalendar(userId, calendarId)
 - alarm 予定登録画面
   - alarmTime
-  - planTime
+  - eventTime
   - location
   - transportType
-  - saveEvent(planTime, location, transportType)
+  - saveEvent(eventTime, location, transportType)
 - alarm 予定通知画面
   - alarmTime
-  - plans
+  - Event[] events
   - getDirections()
 - alarm 予定確認画面（道順確認）
   - datetime
