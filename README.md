@@ -217,23 +217,25 @@ UI層のクラス図
  - Boolean logout(void)
 
 - ユーザコントローラ
-  - 登録画面表示
-  - Boolean showPlan(Date date)
-  - Boolean showReservationForm(Date date)
-  - 登録
-  - 削除画面表示
-  - 削除  
+  - Boolean showForm(void)
+  - Boolean createUser(UserForm f)
+  - Boolean deleteUser(String uid)
+
 - カレンダーコントローラ
-  - カレンダー画面表示
-  - 別の月を表示
-  - 各日の予定画面表示
-  - 予定登録(場所、到着時間、交通手段) 
+  - Boolean showMonthlyCalendar(Date month)
+  - Boolean showReservationsOfDay(Date date)
+  - Boolean showSingleReservation(Long rid)  
+  - Boolean showReservationForm(Date date)
+  - Boolean registerReservation(Location location, Date startTime, Date endTime, TransportType t_type)
+  - Boolean changeReservation(Long rid, Location location, Date startTime, Date endTime, TransportType t_type)
+  - Boolean showCancelForm(Long rid)
+  - Boolean cancelReservation(Long rid)
+
 - 予定通知コントローラ
-  - カレンダーから翌日の予定を検索
-  - 予定の通知
-  - 予定通知画面表示
-  - 道順の確認画面(Google Map)
-  - 道順の変更
+  - Boolean showPlanOfTomorrow(Date date)
+  - Boolean noticeAlarmTime(void)
+  - Boolean showRoute(Long rid)
+  - Boolean changeRoute(Long rid, Location home, Location destination)
 
 ### ドメイン層
 - サービス
