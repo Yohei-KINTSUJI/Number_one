@@ -155,7 +155,7 @@ SmartAlarmのユースケースモデリングを行う
 - [クラス図](https://onedrive.live.com/edit.aspx?resid=C791F496AC885022!2915&ithint=file%2cpptx&authkey=!APCOYBchu4LWp_E)
 
 UI層のクラス図
-![UI層のクラス図](pics/class_UI.jpg)
+![UI層のクラス図](pics/class_diagrams/classDiagrams_UI.jpg)
 
 アプリケーション層のクラス図
 ![アプリケーション層のクラス図](pics/class_app.jpg)
@@ -175,25 +175,26 @@ UI層のクラス図
 ## システムアーキテクチャを作成
 ### ユーザインターフェース層
 - ログイン画面
-  - String userId
+  - String uid
   - String password
-  - Boolean login(userId, password)
+  - Boolean login(String uid, String password)
 
 - カレンダー画面（予定確認）
-  - String userId
-  - String calendarId
-  - List<Event> events
-  - Date dateInformation
-  - boolean selectDate(Date date)
-  - boolean addNewCalendar(void)
-  - List<Event> getCalendar(userId, calendarId)
+  - String uid
+  - Long rid
+  - List<Event> events  
+  - List<Event> getMonthlyCalendar(Date year, Date month)
+  - Boolean getDailyCalendar(Date date)
+  - Boolean selectDate(Date date)
+  - Boolean addNewCalendar(void)
 
 - alarm 予定登録画面
   - Date alarmTime
-  - Date eventTime
+  - Date startTime
+  - Date endTime
   - Location location
   - TransportType t_type
-  - Boolean saveEvent(Date eventTime, Location location, TransportType t_type)
+  - Boolean saveEvent(Date startTime, Date endTime, Location location, TransportType t_type)
 
 - alarm 予定通知画面
   - Date alarmTime
@@ -201,12 +202,13 @@ UI層のクラス図
   - Reservation getPlan(Date date)
 
 - alarm 予定確認画面（道順確認）
-  - Date time
+  - Date startTime
+  - Date endTime
   - Location location
   - Date wakeUpTime
-  - Boolean addCalendarEvent(Date time, Location location)
+  - Boolean saveEvent(Date startTime, Date endTime, Location location, TransportType t_type)
   - Boolean selectDate(Date date)
-  -  getDirections(Date datetime, Location location)
+  - Boolean calculateRequiedTime(Date startTime, Location location)
   - Date calculateWakeUpTime(Event event)
 
 ### アプリケーション層
