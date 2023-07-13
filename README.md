@@ -182,8 +182,8 @@ UI層のクラス図
 - カレンダー画面（予定確認）
   - String uid
   - Long rid
-  - List<Event> events  
-  - List<Event> getMonthlyCalendar(Date year, Date month)
+  - List< Event > events  
+  - List< Event > getMonthlyCalendar(Date year, Date month)
   - Boolean getDailyCalendar(Date date)
   - Boolean selectDate(Date date)
   - Boolean addNewCalendar(void)
@@ -198,7 +198,7 @@ UI層のクラス図
 
 - alarm 予定通知画面
   - Date alarmTime
-  - List<Event> events
+  - List< Event > events
   - Reservation getPlan(Date date)
 
 - alarm 予定確認画面（道順確認）
@@ -244,15 +244,15 @@ UI層のクラス図
   - ユーザサービス
     - UserRepository users
       + User createUser(User user)
-      + List<User> getAllUsers(void)
+      + List< User > getAllUsers(void)
       + User getUser(String uid)
       + User deleteUser(String uid)
 
   - 予定管理サービス
     - ReservationRepository reservations
     - UserRepository users
-      + List<Reservation> getMyCalendar(String uid, Date month)
-      + List<Resevation> getReservationByDate(String uid, Date date)
+      + List< Reservation > getMyCalendar(String uid, Date month)
+      + List< Resevation > getReservationByDate(String uid, Date date)
       + Reservation getResevationByNumber(Long rid)
       + Boolean isVacant(String uid, Date date, Date startTime, Date endTime)
       + Reservation add(Reservation reservation)
@@ -283,13 +283,13 @@ UI層のクラス図
 - レポジトリ
   - ユーザ台帳
     - User findById(String uid)
-    - List<User> findAllUser(void)
+    - List< User > findAllUser(void)
     - User save(User user)
     - Boolean deleteById(String uid)
 
   - 予定台帳
     - Reservation findById(Long rid)
-    - List<Reservation> findByMonthAndUid(Date month, String uid)
-    - List<Reservation> findByDate(Date date, String uid)
+    - List< Reservation > findByMonthAndUid(Date month, String uid)
+    - List< Reservation > findByDate(Date date, String uid)
     - Reservation save(Reservation reservation)
     - Boolean deleteById(Long rid)
