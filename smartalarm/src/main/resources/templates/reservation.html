@@ -5,12 +5,22 @@
     <title>一日の予定</title>
 </head>
 <body>
-    <h1>本日の予定</h1>    
-    </form>
-    <h2>検索する</h2>
-    <form th:action="@{/search}" th:object="${searchForm}" method="get">
-        <label for="keyword">キーワード：</label>
-        <input type="text" reqired th:field="*{keyword}" />
-        <input type="submit" th:href="@{/search}" value="検索する" />
+    <h1>本日の予定</h1>   
+    <ul>
+        <li th:each="t: ${listList}">
+            [[${t.title}]] -- [[${t.startTime}]] to [[${t.endTime}]] on [[${t.location}]]
+        </li>
+    </ul>
+    <h2>予定を追加する</h2>
+    <form th:action="@{/add}" th:object="${listForm}" method="post">
+        <label for="title">予定の内容</label>
+        <input type="text" th:field="*{title}" size="8" value="何かの予定" />
+        <label for="comment">開始時刻</label>
+        <input type="time" required th:field="*{startTime}" />
+        <label for="comment">終了時刻</label>
+        <input type="time" required th:field="*{endTime}" />
+        <label for="title">場所</label>
+        <input type="text" th:field="*{location}" size="8" value="どこかの場所" />
+        <input type="submit" value="予定の追加" />
     </form>
 </body>
