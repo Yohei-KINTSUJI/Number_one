@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>一日の予定</title>
+</head>
+<body>
+    <h1>本日の予定</h1>    
+    </form>
+    <h2>検索する</h2>
+    <form th:action="@{/search}" th:object="${searchForm}" method="get">
+        <label for="keyword">キーワード：</label>
+        <input type="text" reqired th:field="*{keyword}" />
+        <input type="submit" th:href="@{/search}" value="検索する" />
+    </form>
+</body>
