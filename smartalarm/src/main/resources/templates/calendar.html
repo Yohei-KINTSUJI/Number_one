@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>予定</title>
 </head>
-<body>    
-    <h1>予定を確認する</h1>
-    <input type = "Date">
+<body>
+    <input type = "Date" required th:field="*{date}" />
+    <a th:href="@{/reservation}">予定を確認する</a>
+    <h2>タイトルへ</h2>
+    <a th:href="@{/}">戻る</a>
 </body>
