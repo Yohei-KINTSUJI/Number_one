@@ -7,12 +7,12 @@
 <body>
     <h1>本日の予定</h1>   
     <ul>
-        <li th:each="t: ${listList}">
+        <li th:each="t: ${reservationList}">
             [[${t.title}]] -- [[${t.startTime}]] to [[${t.endTime}]] on [[${t.location}]]
         </li>
     </ul>
     <h2>予定を追加する</h2>
-    <form th:action="@{/add}" th:object="${listForm}" method="post">
+    <form th:action="@{/add}" th:object="${reservationForm}" method="post">
         <label for="title">予定の内容</label>
         <input type="text" th:field="*{title}" size="8" value="何かの予定" />
         <label for="comment">開始時刻</label>
