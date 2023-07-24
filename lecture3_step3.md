@@ -40,3 +40,11 @@
 ## 予定登録画面
 
 ![予定登録画面](pics/use_case3.jpg)
+
+# ロバストネス図
+
+![ロバストネス図のスクリーンショット](pics/robustness_diagrams/usecase3_robustness.jpg)
+
+# シーケンス図
+
+![シーケンス図のスクリーンショット](pics/sequence_diagrams/usecase3_sequence.png)

@@ -116,7 +116,7 @@ WONT（やらない）:
 - ライフログを用いて，準備にかかる時間を測定する
 - 前日に，明日の予定の確認，変更を行えるようにする．
 
-# 第3回
+# 第3回 6/26
 
 SmartAlarmのユースケースモデリングを行う
 
@@ -135,10 +135,161 @@ SmartAlarmのユースケースモデリングを行う
 6. [目的地までの道順を確認する](lecture3_step6.md)
 
 
-# 第4回
+# 第4回 7/3
 
  - [ドメインモデル図 - URL](https://online.visual-paradigm.com/share.jsp?id=323637313839362d31)
 
 
 - キーワード
 -- ユーザ　カレンダー　アラーム　アイコン　時間　道順　予定　登録　事前通知
+
+# 第5回 7/10
+
+- オブジェクト指向設計
+
+- [ドメインモデル図 - URL](https://online.visual-paradigm.com/share.jsp?id=323637313839362d31)
+
+- アーキテクチャ図
+- ![アーキテクチャ図](pics/Architecture_Diagram.jpg)
+
+- [クラス図](https://onedrive.live.com/edit.aspx?resid=C791F496AC885022!2915&ithint=file%2cpptx&authkey=!APCOYBchu4LWp_E)
+
+UI層のクラス図
+![UI層のクラス図](pics/class_diagrams/classDiagrams_UI.jpg)
+
+アプリケーション層のクラス図
+![アプリケーション層のクラス図](pics/class_app.jpg)
+
+ドメイン層のクラス図
+![ドメイン層のクラス図](pics/class_domain.jpg)
+
+## グループワーク やること
+  - スマートアラームのシステムアーキテクチャを洗練させる
+   - ブロック図を作成
+  - ソフトウェアアーキテクチャを考える
+  - 作成すべき設計クラスを列挙
+  - 先週作成したドメインモデル図をコピーして，設計クラスを追加
+  - クラスに入るメッセージに着目してメソッドを割り当て，クラス図を作成する
+  - クラス図に属性，メソッド，関連を割り当てる
+
+## システムアーキテクチャを作成
+### ユーザインターフェース層
+- ログイン画面
+  - String uid
+  - String password
+  - Boolean login(String uid, String password)
+
+- カレンダー画面（予定確認）
+  - String uid
+  - Long rid
+  - List< Event > events  
+  - List< Event > getMonthlyCalendar(Date year, Date month)
+  - Boolean getDailyCalendar(Date date)
+  - Boolean selectDate(Date date)
+  - Boolean addNewCalendar(void)
+
+- alarm 予定登録画面
+  - Date alarmTime
+  - Date startTime
+  - Date endTime
+  - Location location
+  - TransportType t_type
+  - Boolean saveEvent(Date startTime, Date endTime, Location location, TransportType t_type)
+
+- alarm 予定通知画面
+  - Date alarmTime
+  - List< Event > events
+  - Reservation getPlan(Date date)
+
+- alarm 予定確認画面（道順確認）
+  - Date startTime
+  - Date endTime
+  - Location location
+  - Date wakeUpTime
+  - Boolean saveEvent(Date startTime, Date endTime, Location location, TransportType t_type)
+  - Boolean selectDate(Date date)
+  - Boolean calculateRequiedTime(Date startTime, Location location)
+  - Date calculateWakeUpTime(Event event)
+
+### アプリケーション層
+
+- ログインコントローラ
+ - Boolean showLoginForm(void)
+ - Boolean login(String uid, String pass)
+ - Boolean logout(void)
+
+- ユーザコントローラ
+  - Boolean showForm(void)
+  - Boolean createUser(UserForm f)
+  - Boolean deleteUser(String uid)
+
+- カレンダーコントローラ
+  - Boolean showMonthlyCalendar(Date month)
+  - Boolean showReservationsOfDay(Date date)
+  - Boolean showSingleReservation(Long rid)  
+  - Boolean showReservationForm(Date date)
+  - Boolean registerReservation(Location location, Date startTime, Date endTime, TransportType t_type)
+  - Boolean changeReservation(Long rid, Location location, Date startTime, Date endTime, TransportType t_type)
+  - Boolean showCancelForm(Long rid)
+  - Boolean cancelReservation(Long rid)
+
+- 予定通知コントローラ
+  - Boolean showPlanOfTomorrow(Date date)
+  - Boolean noticeAlarmTime(void)
+  - Boolean showRoute(Long rid)
+  - Boolean changeRoute(Long rid, Location home, Location destination)
+
+### ドメイン層
+- サービス
+  - ユーザサービス
+    - UserRepository users
+      + User createUser(User user)
+      + List< User > getAllUsers(void)
+      + User getUser(String uid)
+      + User deleteUser(String uid)
+
+  - 予定管理サービス
+    - ReservationRepository reservations
+    - UserRepository users
+      + List< Reservation > getMyCalendar(String uid, Date month)
+      + List< Resevation > getReservationByDate(String uid, Date date)
+      + Reservation getResevationByNumber(Long rid)
+      + Boolean isVacant(String uid, Date date, Date startTime, Date endTime)
+      + Reservation add(Reservation reservation)
+      + Reservation change(String uid, Long rid, Date date, Date startTime, Date endTime)
+      + Boolean cancel(String uid, Long rid)
+
+  - 予定通知サービス
+    - UserRepository users
+      + Date pushAlarmTime(String uid, Date date)
+
+- エンティティ
+  -  ユーザ
+    - String uid
+    - String password
+    - String name
+      + Boolean chkPwd(String pass)
+  - ユーザセッション
+    - User user
+     + Boolean invalidate(void)
+  -  予定
+    - Long rid
+    - String uid
+    - Date date
+    - Date startTime
+    - Date endTime
+    - String purpose
+
+- レポジトリ
+  - ユーザ台帳
+    - User findById(String uid)
+    - List< User > findAllUser(void)
+    - User save(User user)
+    - Boolean deleteById(String uid)
+
+  - 予定台帳
+    - Reservation findById(Long rid)
+    - List< Reservation > findByMonthAndUid(Date month, String uid)
+    - List< Reservation > findByDate(Date date, String uid)
+    - Reservation save(Reservation reservation)
+    - Boolean deleteById(Long rid)
