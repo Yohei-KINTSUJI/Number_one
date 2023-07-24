@@ -23,16 +23,16 @@ public class ReservationController {
         return "index";
     }
 
-    @GetMapping("/list")
+    @GetMapping("/calendar")
     String showReservationList(Model model) {
         List<Reservation> list = rs.getAllResevations(); // 全つぶやきを取得
         model.addAttribute("reservationList", list); // モデル属性にリストをセット
         model.addAttribute("reservationForm", new ReservationForm()); // 空フォームをセット
-        return "reservation_list";
+        return "reservation";
     }
 
-    @PostMapping("/list")
-    String addReservation(@ModelAttribute("tsubuyakiForm") ReservationForm form, Model model) {
+    @PostMapping("/reservation")
+    String addReservation(@ModelAttribute("reservationForm") ReservationForm form, Model model) {
         Reservation res = new Reservation();
         res.setTitle(form.getTitle());
         res.setLocation(form.getLocation());
@@ -40,7 +40,7 @@ public class ReservationController {
         res.setEndTime(form.getEndTime());
 
         rs.addReservation(res);
-        return "redirect:/list";
+        return "redirect:/calendar";
     }
 
 }
