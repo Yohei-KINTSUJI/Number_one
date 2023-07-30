@@ -9,6 +9,10 @@
     <ul>
         <li th:each="t: ${reservationList}">
             [[${t.title}]] -- [[${t.startTime}]] to [[${t.endTime}]] on [[${t.location}]]
+            <form>
+                <input type="hidden" name="id" th:value="$(t.id)"></input>
+                <input type="submit" value="Delete"></input>
+            </form>
         </li>
     </ul>
     <h2>予定を追加する</h2>

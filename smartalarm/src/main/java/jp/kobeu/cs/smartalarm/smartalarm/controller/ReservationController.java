@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.kobeu.cs.smartalarm.smartalarm.entity.Reservation;
 import jp.kobeu.cs.smartalarm.smartalarm.service.ReservationService;
@@ -41,6 +42,12 @@ public class ReservationController {
 
         rs.addReservation(res);
         return "redirect:/calendar";
+    }
+
+    @PostMapping("/reservation/delete")
+    String deleteReservation(@RequestParam("id") Long id) {
+        rs.deleteReservationById(id);
+        return "redirect:/reservation";
     }
 
 }
