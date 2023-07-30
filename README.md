@@ -293,3 +293,9 @@ UI層のクラス図
     - List< Reservation > findByDate(Date date, String uid)
     - Reservation save(Reservation reservation)
     - Boolean deleteById(Long rid)
+
+# 第7回 7/24
+
+SmartAlarmプロトタイプ実装
+
+[プログラムへのリンク](attach:smartalarm)
