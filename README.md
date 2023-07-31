@@ -273,7 +273,7 @@ UI層のクラス図
     - User user
      + Boolean invalidate(void)
   -  予定
-    - Long rid
+    - L回回ng rid
     - String uid
     - Date date
     - Date startTime
@@ -299,3 +299,7 @@ UI層のクラス図
 SmartAlarmプロトタイプ実装
 
 [プログラムへのリンク](attach:smartalarm)
+
+# 第8回 7/31
+
+[発表スライド](https://docs.google.com/presentation/d/13xmOE37xpVitNyexs0_3v4rmRnWkyO7Z/edit#slide=id.p2)
