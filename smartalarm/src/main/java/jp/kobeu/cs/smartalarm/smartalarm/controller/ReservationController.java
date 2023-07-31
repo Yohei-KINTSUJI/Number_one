@@ -43,4 +43,11 @@ public class ReservationController {
         return "redirect:/calendar";
     }
 
+    @GetMapping("/measure")
+    String measureTime(@ModelAttribute("measureForm") MeasureForm form, Model model) {
+        Reservation res = new Reservation();        
+        res.setTitle(form.getTitle());
+        return "timer";
+    }
+
 }
