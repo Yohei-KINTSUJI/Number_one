@@ -8,7 +8,7 @@
     <h1>本日の予定</h1>
     <ul>
         <li th:each="t: ${reservationList}">
-            [[${t.title}]] -- [[${t.startTime}]] to [[${t.endTime}]] on [[${t.location}]]
+            [[${t.title}]] -- [[${t.startTime}]] to [[${t.endTime}]] on [[${t.location}]] <button type="button">削除</button>
         </li>
     </ul>
     <h2>予定を追加する</h2>

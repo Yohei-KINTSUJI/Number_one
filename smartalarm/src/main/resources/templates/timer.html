@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeMeasurer</title>
+    <link rel='stylesheet' type='text/css' th:href=@{/styles.css}>
+</head>
+<body>
+    <h1>準備時間を測定する</h1>
+    <form th:action="@{/measure}" th:object="${measureForm}" method="get">
+    <label for="title">予定の内容</label>
+    <input type="text" th:field="*{title}" size="8" value="何かのタスク" />
+    </form>
+    
+    <div id="container">
+    <div id="time">00:00:00.000</div>
+    <div id="buttons">
+      <input id="start" type="button" value="start">
+      <input id="stop" type="button" value="stop">
+      <input id="reset" type="button" value="reset">      
+      <input id="save" type="button" value="save">
+    </div>
+    </div>  
+    <script th:src=@{/main.js}></script>
+</body>
